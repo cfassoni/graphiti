@@ -548,6 +548,8 @@ API keys are provided for any language model operations.
 mcp = FastMCP(
     'Graphiti Agent Memory',
     instructions=GRAPHITI_MCP_INSTRUCTIONS,
+    host=os.environ.get("MCP_BIND_ADDR", "0.0.0.0"),
+    port=int(os.environ.get("MCP_BIND_PORT", "8000")),
 )
 
 # Initialize Graphiti client
